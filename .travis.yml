@@ -25,7 +25,6 @@ matrix:
       - rustup component add clippy-preview
     script:
       - cargo clippy -- -D clippy
-  - rust: stable
 
 # Upload docs
 after_success:
