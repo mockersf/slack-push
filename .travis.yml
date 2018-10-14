@@ -1,0 +1,39 @@
+language: rust
+
+cache: cargo
+
+rust:
+  - stable
+  - beta
+  - nightly
+
+matrix:
+  allow_failures:
+    - rust: nightly
+    - env: CARGO-TRAVIS
+  fast_finish: true
+  include:
+  - rust: stable
+    env: RUSTFMT
+    install:
+      - rustup component add rustfmt-preview
+    script:
+      - cargo fmt -- --check
+  - rust: nightly
+    env: CLIPPY
+    install:
+      - rustup component add clippy-preview
+    script:
+      - cargo clippy -- -D clippy
+  - rust: stable
+
+# Upload docs
+after_success:
+  - |
+    if [[ "$TRAVIS_OS_NAME" == "linux" && "$TRAVIS_PULL_REQUEST" = "false" && "$TRAVIS_BRANCH" == "master" && "$TRAVIS_RUST_VERSION" == "beta" ]]; then
+      cargo doc --no-deps &&
+      echo "<meta http-equiv=refresh content=0;url=slack_push/index.html>" > target/doc/index.html &&
+      git clone https://github.com/davisp/ghp-import.git &&
+      ./ghp-import/ghp_import.py -n -p -f -m "Documentation upload" -r https://"$GH_TOKEN"@github.com/"$TRAVIS_REPO_SLUG.git" target/doc &&
+      echo "Uploaded documentation"
+    fi
