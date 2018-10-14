@@ -18,6 +18,9 @@
 #[macro_use]
 extern crate serde_derive;
 
-pub mod event;
+mod event;
+pub use event::{Event, EventInfo};
 pub mod message;
-pub mod slack;
+pub use message::Message;
+mod slack;
+pub use slack::Channel;
