@@ -119,7 +119,7 @@ pub enum AttachmentAction {
 }
 
 /// An option field
-#[derive(Clone, Debug, Serialize)]
+#[derive(Clone, Debug, Default, Serialize)]
 pub struct SelectMenuOption {
     /// A short, user-facing string to label this option to users
     pub text: String,
@@ -130,7 +130,7 @@ pub struct SelectMenuOption {
 }
 
 /// An option group
-#[derive(Clone, Debug, Serialize)]
+#[derive(Clone, Debug, Default, Serialize)]
 pub struct SelectMenuOptionGroup {
     /// A short, user-facing string to label this option to users
     pub text: String,
@@ -139,7 +139,7 @@ pub struct SelectMenuOptionGroup {
 }
 
 /// Protect users from destructive actions or particularly distinguished decisions by asking them to confirm their button click one more time
-#[derive(Clone, Debug, Serialize)]
+#[derive(Clone, Debug, Default, Serialize)]
 pub struct AttachmentActionConfirm {
     /// Title the pop up window
     pub title: Option<String>,
