@@ -16,7 +16,7 @@
 //! Helper crate with types for common Slack objects
 
 #[macro_use]
-extern crate serde_derive;
+extern crate serde;
 
 mod event;
 pub use event::{Event, EventInfo};
