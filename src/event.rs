@@ -1,6 +1,6 @@
 //! Events received from Slack through the Events API
 
-use slack;
+use crate::slack;
 
 /// Informations about an event
 #[derive(Serialize, Deserialize, Debug)]

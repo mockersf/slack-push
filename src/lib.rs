@@ -19,8 +19,8 @@
 extern crate serde;
 
 mod event;
-pub use event::{Event, EventInfo};
+pub use crate::event::{Event, EventInfo};
 pub mod message;
-pub use message::Message;
+pub use crate::message::Message;
 mod slack;
-pub use slack::Channel;
+pub use crate::slack::Channel;
