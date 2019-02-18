@@ -76,6 +76,7 @@ pub enum EventInfo {
 }
 
 /// Event received from Slack
+#[allow(clippy::large_enum_variant)]
 #[derive(Serialize, Deserialize, Debug)]
 #[serde(tag = "type")]
 pub enum Event {
