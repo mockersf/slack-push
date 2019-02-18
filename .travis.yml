@@ -19,7 +19,7 @@ matrix:
       - rustup component add rustfmt
     script:
       - cargo fmt -- --check
-  - rust: nightly
+  - rust: stable
     env: CLIPPY
     install:
       - rustup component add clippy
