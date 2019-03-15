@@ -4,7 +4,7 @@
 #[derive(Clone, Debug, Default, Serialize)]
 pub struct Message {
     /// Channel, private group, or IM channel to send message to. Can be an encoded ID, or a name
-    pub channel: String,
+    pub channel: Option<String>,
     /// Text of the message to send
     pub text: String,
     /// Pass true to post the message as the authed user, instead of as a bot
