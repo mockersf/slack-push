@@ -72,6 +72,8 @@ pub struct Attachment {
     pub actions: Option<Vec<AttachmentAction>>,
     /// Even for message menus, remains the default value `default`
     pub attachment_type: Option<String>,
+    /// Enable markdown in a field
+    pub mrkdwn_in: Option<Vec<String>>,
 }
 
 /// Simplify complex workflows and empower users to take decisive action by adding interactive buttons to your messages
