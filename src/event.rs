@@ -4,7 +4,7 @@ use crate::slack;
 
 /// Link
 #[derive(Serialize, Deserialize, Debug)]
-struct Link {
+pub struct Link {
     /// Registered domain which has been matched
     domain: String,
     /// Unfurled URL
