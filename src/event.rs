@@ -2,7 +2,7 @@
 
 use crate::slack;
 
-
+/// Link
 #[derive(Serialize, Deserialize, Debug)]
 struct Link {
     /// Registered domain which has been matched
@@ -88,13 +88,13 @@ pub enum EventInfo {
     LinkShared{
         /// Channel source of the link(s)
         channel: String,
-
+        /// User that triggered the event
         user: String,
-
+        /// Time stamp of the message
         message_ts: String,
-
+        /// Time stamp of the thread
         thread_ts: String,
-
+        /// Vector of unfurled links
         links: Vec<Link>
     }
 }
