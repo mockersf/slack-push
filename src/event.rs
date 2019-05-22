@@ -8,7 +8,7 @@ pub struct Link {
     /// Registered domain which has been matched
     domain: String,
     /// Unfurled URL
-    url: String
+    url: String,
 }
 
 /// Informations about an event
@@ -85,7 +85,7 @@ pub enum EventInfo {
 
     /// One or more links have been unfurled
     #[serde(rename = "link_shared")]
-    LinkShared{
+    LinkShared {
         /// Channel source of the link(s)
         channel: String,
         /// User that triggered the event
@@ -95,8 +95,8 @@ pub enum EventInfo {
         /// Time stamp of the thread
         thread_ts: String,
         /// Vector of unfurled links
-        links: Vec<Link>
-    }
+        links: Vec<Link>,
+    },
 }
 
 /// Event received from Slack
