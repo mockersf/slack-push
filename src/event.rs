@@ -2,6 +2,15 @@
 
 use crate::slack;
 
+
+#[derive(Serialize, Deserialize, Debug)]
+struct Link {
+    /// Registered domain which has been matched
+    domain: String,
+    /// Unfurled URL
+    url: String
+}
+
 /// Informations about an event
 #[derive(Serialize, Deserialize, Debug)]
 #[serde(tag = "type")]
@@ -73,6 +82,21 @@ pub enum EventInfo {
         /// User that triggered the event
         user: String,
     },
+
+    /// One or more links have been unfurled
+    #[serde(rename = "link_shared")]
+    LinkShared{
+        /// Channel source of the link(s)
+        channel: String,
+
+        user: String,
+
+        message_ts: String,
+
+        thread_ts: String,
+
+        links: Vec<Link>
+    }
 }
 
 /// Event received from Slack
