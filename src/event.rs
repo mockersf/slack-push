@@ -12,7 +12,7 @@ pub struct Link {
 }
 
 /// Informations about an event
-#[derive(Serialize, Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug, Default)]
 #[serde(tag = "type")]
 pub enum EventInfo {
     /// Subscribe to only the message events that mention your app or bot
