@@ -6,9 +6,9 @@ use crate::slack;
 #[derive(Serialize, Deserialize, Debug)]
 pub struct Link {
     /// Registered domain which has been matched
-    domain: String,
+    pub domain: String,
     /// Unfurled URL
-    url: String,
+    pub url: String,
 }
 
 /// Informations about an event
@@ -93,7 +93,7 @@ pub enum EventInfo {
         /// Time stamp of the message
         message_ts: String,
         /// Time stamp of the thread
-        thread_ts: String,
+        thread_ts: Option<String>,
         /// Vector of unfurled links
         links: Vec<Link>,
     },
