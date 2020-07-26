@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["Event","Event received from Slack"],["EventInfo","Informations about an event"]],"mod":[["message","Types related to Slack messages"]],"struct":[["Channel","A Channel in Slack"]]});
